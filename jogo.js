@@ -51,6 +51,10 @@ function addMosca(){
 
 	mosquito.id = 'mosquito'
 
+	mosquito.onclick = function(){
+		this.remove()
+	}
+
 	document.body.appendChild(mosquito)
 }
 
@@ -80,3 +84,4 @@ function ladoAleatorio(){
 			return 'ladoB'
 	}
 }
+
