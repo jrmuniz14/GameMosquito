@@ -11,9 +11,17 @@ var  tempo = 10
 
 var cronometro = setInterval(function(){
 
-	tempo -= 1
+	if (tempo > 0) {
 
-	document.getElementById('segundos').innerHTML = tempo
+		tempo -= 1
+
+		document.getElementById('segundos').innerHTML = tempo
+
+	}else{
+		clearInterval(jogo)
+		clearInterval(cronometro)
+		alert('vitoria')
+	}
 
 },1000)
 
