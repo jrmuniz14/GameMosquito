@@ -11,7 +11,18 @@
 	
 	<body>
 
-		<img id="fimjogo" src="imagens/game_over.png">
+		<div>
+			<img class="centraliza_conteudo" src="imagens/game_over.png">
+
+			<button onclick="reinicia()" id="btn_jogar" class="centraliza_conteudo">Jogar Novamente</button>
+		</div>
+
+		<script type="text/javascript">
+			function reinicia(){
+				window.location.href = 'app.html'
+			}
+		</script>
+		
 	
 	</body>
 

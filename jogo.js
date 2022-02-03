@@ -7,6 +7,18 @@ var posY = 0
 
 var vidas = 3
 
+var  tempo = 10
+
+var cronometro = setInterval(function(){
+
+	tempo -= 1
+
+	document.getElementById('segundos').innerHTML = tempo
+
+},1000)
+
+
+
 function getTamanhoTela(){
 	
 	altura = window.innerHeight
@@ -42,7 +54,7 @@ function addMosca(){
 	if(document.getElementById('mosquito')){
 		document.getElementById('mosquito').remove()
 
-		if (vidas > 0) {
+		if (vidas > 1) {
 			
 			document.getElementById('vida'+vidas).src = "imagens/coracao_vazio.png"
 			vidas--

@@ -23,13 +23,14 @@
 			</div>
 
 			<div class="cronometro">
-				
+				Tempo restante <span id="segundos"></span>
 			</div>
 
 		</div>
 
 		<script>
 			
+			document.getElementById('segundos').innerHTML = tempo
 
 			setInterval(function(){
 				
