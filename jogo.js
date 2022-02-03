@@ -5,6 +5,8 @@ var largura = 0
 var posX = 0
 var posY = 0
 
+var vidas = 3
+
 function getTamanhoTela(){
 	
 	altura = window.innerHeight
@@ -39,6 +41,15 @@ function addMosca(){
 
 	if(document.getElementById('mosquito')){
 		document.getElementById('mosquito').remove()
+
+		if (vidas > 0) {
+			
+			document.getElementById('vida'+vidas).src = "imagens/coracao_vazio.png"
+			vidas--
+		}else{
+			window.location.href = 'gameover.html'
+		}
+		
 	}
 
 	var mosquito = document.createElement('img')
