@@ -7,7 +7,24 @@ var posY = 0
 
 var vidas = 3
 
-var  tempo = 10
+var  tempo = 30
+
+var respawTempo = 1500
+
+var nivel = window.location.search.replace('?','')
+
+
+if (nivel === 'facil') {
+	respawTempo = 2000
+}
+
+if (nivel === 'medio') {
+	respawTempo = 1500
+}
+
+if (nivel === 'dificil') {
+	respawTempo = 1000
+}
 
 var cronometro = setInterval(function(){
 
@@ -20,7 +37,7 @@ var cronometro = setInterval(function(){
 	}else{
 		clearInterval(jogo)
 		clearInterval(cronometro)
-		alert('vitoria')
+		window.location.href = 'vitoria.html'
 	}
 
 },1000)
@@ -67,6 +84,9 @@ function addMosca(){
 			document.getElementById('vida'+vidas).src = "imagens/coracao_vazio.png"
 			vidas--
 		}else{
+			
+			clearInterval(jogo)
+			clearInterval(cronometro)
 			window.location.href = 'gameover.html'
 		}
 		
